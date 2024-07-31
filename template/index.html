@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mumbai Weather Prediction </title>
+    <link rel="stylesheet" href="/staticfiles/style.css">
+</head>
+<body>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="temp" id="research" placeholder="Temperature">
+        <input type="text" name="humidity" id="research" placeholder="Humidity level">
+        <input type="text" name="sealevelpressure" id="research" placeholder="Enter sea level pressure">
+        <input type="text" name="winddir" id="research" placeholder="Enter Wind direction">
+        <input type="text" name="solarradiation" id="research" placeholder="Enter solar radiation">
+
+        <h3> Precipitation </h3>
+        <select name="Precipitation type" id="g">
+            <option value="0">None</option>
+            <option value="1">Rain</option>
+        </select>
+        
+        <br>
+        <br>
+        <button type="submit" id="sub">Prediction </button>
+
+    </form>
+
+    <br>
+    <br>
+    {{prediction_text}}
+</body>
+</html>
